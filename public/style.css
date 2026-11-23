@@ -215,15 +215,27 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-    animation: spin 3s linear infinite;
+    animation: spin 1.5s linear infinite;
     animation-play-state: paused;
-    transition: transform 0.3s ease;
     z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.vinyl-record.playing {
+    animation-play-state: running;
 }
 
 .card:hover .vinyl-record {
-    animation-play-state: running;
     transform: scale(1.06);
+    animation-play-state: running;
+}
+
+.card:hover .vinyl-record {
+    transform: scale(1.06);
+}
+
+.vinyl-record.playing {
+    animation-play-state: running;
 }
 
 .grooves {
