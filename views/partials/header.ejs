@@ -1,17 +1,36 @@
+
 <header class="header">
     <div class="logo">
         <span class="logo-title">VINYL STORE</span>
-        <span class="logo-subtitle">✦ РАРИТЕТНЫЙ АНАЛОГОВЫЙ ЗВУК ✦</span>
+        <span class="logo-subtitle">
+            ✦ РАРИТЕТНЫЙ АНАЛОГОВЫЙ ЗВУК ✦
+        </span>
     </div>
 
     <nav class="nav">
         <% if (typeof isAdmin !== 'undefined' && isAdmin) { %>
-            <a href="/add">Добавить пластинку</a>
+
+            <a href="/add" class="cart-btn">
+                Добавить пластинку
+            </a>
+
             <form action="/logout" method="POST">
-                <button type="submit">Выйти</button>
+                <button class="cart-btn" type="submit">
+                    Выйти
+                </button>
             </form>
+
         <% } else { %>
-            <a href="/login">Вход администратора</a>
+
+            <a href="/login" class="cart-btn">
+                Вход администратора
+            </a>
+
         <% } %>
+
+        <button class="cart-btn" id="open-cart-btn">
+            <span>Корзина</span>
+            <span id="cart-count" class="cart-badge">0</span>
+        </button>
     </nav>
 </header>
